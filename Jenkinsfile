@@ -34,9 +34,10 @@ pipeline{
         }
         stage("Deploy"){
           steps{
-                sh "docker compose down"
-                sh "docker compose up -d --build"
-                echo "Deploy done";
+               docker stop online-shop
+               docker rm online-shop
+               docker compose up -d --build
+
           }
         }
     }

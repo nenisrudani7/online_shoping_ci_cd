@@ -34,10 +34,9 @@ pipeline{
         }
         stage("Deploy"){
           steps{
-               docker stop online-shop
-               docker rm online-shop
-               docker compose up -d --build
-
+              sh docker stop online-shop
+              sh docker rm online-shop
+              sh docker compose up -d --build
           }
         }
     }

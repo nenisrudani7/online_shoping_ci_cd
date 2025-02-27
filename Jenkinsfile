@@ -34,7 +34,7 @@ pipeline{
         }
         stage("Deploy"){
           steps{
-              sh "docker run -d -p 3000:3000 node_jenkins:latest"
+              sh "docker compose up -d --build  online-shop"
                 echo "Deploy done";
           }
         }
